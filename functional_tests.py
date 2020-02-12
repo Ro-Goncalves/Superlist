@@ -25,22 +25,23 @@ class NewVisitorTest(unittest.TestCase):
         inputbox = self.browser.find_element_by_id('id_new_item') #1
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
-            'Entre a to-do item'
+            'Enter a to-do item'
         )
 
         #She types "Buy peacock feathers" into de text box (Edith's hobby
         # is tying fly-fishing lures)
-        inputbox.send_key('Buy peacock feathers') #2
+        inputbox.send_keys('Buy peacock feathers') #2
 
         #When she hits entre, the page updates, and now the page lists
         #"1: Buy peacock feathers" as on item in a to-do list
-        inputbox.send_key(Keys.ENTER) #3
-        time.sleep(3) #4
+        inputbox.send_keys(Keys.ENTER) #3
+        time.sleep(1) #4
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr') #1
         self.assertTrue(
-            any(row.text =='1: Buy peacock feathers' for row in rows)
+            any(row.text =='1: Buy peacock feathers' for row in rows),
+            "New to-do item did not appear in table"
         )
 
         #There is still a text box inviting her to add another item. She
