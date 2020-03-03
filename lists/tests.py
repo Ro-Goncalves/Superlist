@@ -14,7 +14,7 @@ class HomePageTest(TestCase):
         self.assertTemplateUsed(response, 'home.html')
 
 class ListAndItemModelsTest(TestCase):
-    pass
+    
     def test_saving_and_retrieving_items(self):
         list_ = List()      
         list_.save()
