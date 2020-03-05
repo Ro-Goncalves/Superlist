@@ -39,7 +39,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
     def test_can_start_list_for_one_user(self):
         #Edith has heard about a coll new online to-do app. She goes
         #to check out its homepage
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.live_server_url)        
 
         #She notices the page tile and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)            
