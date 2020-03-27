@@ -3,3 +3,5 @@ geckodriver.log
 geckodriver.exe
 __pycache__
 *.pyc
+*.pem
+geckodriver.exe
